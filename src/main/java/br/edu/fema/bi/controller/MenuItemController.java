@@ -1,3 +1,4 @@
+
 package br.edu.fema.bi.controller;
 
 import java.util.List;
@@ -16,27 +17,33 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.fema.bi.service.MenuItemService;
 import br.edu.fema.bi.vo.MenuItemVO;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/menuItem")
+@Api(description = "[/menuItem] Api para realizar a persistência dos dados em relação ao objeto MenuItem")
 public class MenuItemController {
 
 	@Autowired
 	private MenuItemService service;
 	
 	@GetMapping
+	@ApiOperation(value = "Serviço para listar todos os objetos MenuItem")
 	public ResponseEntity<?> bucarTodos() {
 		List<MenuItemVO> menus = service.selecionarTodos();
 		return new ResponseEntity<>(menus, HttpStatus.OK);
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<?> bucarTodos(@PathVariable String id) {
+	@ApiOperation(value = "Serviço para buscar um objeto MenuItem por id")
+	public ResponseEntity<?> bucarPorId(@PathVariable String id) {
 		MenuItemVO menu = service.selecionarPorId(id);
 		return new ResponseEntity<>(menu, HttpStatus.OK);
 	}
 	
 	@PutMapping("/{id}")
+	@ApiOperation(value = "Serviço para atualizar um objeto MenuItem")
 	public ResponseEntity<?> atualizar(@PathVariable String id, @RequestBody MenuItemVO menu) {
 		menu.setId(id);
 		this.service.salvar(menu);
@@ -44,11 +51,13 @@ public class MenuItemController {
 	}
 	
 	@PostMapping
+	@ApiOperation(value = "Serviço para incluir um novo MenuItem")
 	public ResponseEntity<?> salvar(@RequestBody MenuItemVO menu) {
 		this.service.salvar(menu);
 		return new ResponseEntity<>(menu, HttpStatus.OK);
 	}
 	
+	@ApiOperation(value = "Serviço para excluir um MenuItem")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> deletar(@PathVariable String id) {
 		this.service.deletar(id);
