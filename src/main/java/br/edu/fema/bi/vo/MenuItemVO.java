@@ -3,6 +3,7 @@ package br.edu.fema.bi.vo;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 @Entity(name = "menu_item")
 public class MenuItemVO {
@@ -22,6 +23,17 @@ public class MenuItemVO {
 	
 	@Column(name = "style")
 	private String style;
+	
+	@Transient
+	private DashboardVO dashboard;
+	
+	public DashboardVO getDashboard() {
+		return dashboard;
+	}
+	
+	public void setDashboard(DashboardVO dashboard) {
+		this.dashboard = dashboard;
+	}
 
 	public String getId() {
 		return id;

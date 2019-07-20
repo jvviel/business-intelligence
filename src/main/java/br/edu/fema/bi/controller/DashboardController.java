@@ -30,8 +30,14 @@ public class DashboardController {
 		return dashs;
 	}
 	
+	@GetMapping("/{codigo}")
+	public ResponseEntity<?> buscarPorCodigo(@PathVariable String codigo) {
+		DashboardVO dash = service.selecionarPorCodigo(codigo);
+		return new ResponseEntity<>(dash, HttpStatus.OK);
+	}
+	
 	@GetMapping("/{id}")
-	public ResponseEntity<?> bucarTodos(@PathVariable String id) {
+	public ResponseEntity<?> buscarPorId(@PathVariable String id) {
 		DashboardVO dash = service.selecionarPorId(id);
 		return new ResponseEntity<>(dash, HttpStatus.OK);
 	}

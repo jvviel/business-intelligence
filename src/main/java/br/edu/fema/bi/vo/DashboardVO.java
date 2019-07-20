@@ -10,15 +10,35 @@ import javax.persistence.Transient;
 @Entity(name = "dashboard")
 public class DashboardVO {
 
-	@Id
+	
 	@Column(name = "id")
 	private String id;
 	
+	@Id
 	@Column(name = "codigo")
-	private Long codigo;
+	private String codigo;
+	
+	@Column(name = "id_menu_item")
+	private String idMenuItem;
+	
+	public String getIdMenuItem() {
+		return idMenuItem;
+	}
+	
+	public void setIdMenuItem(String idMenuItem) {
+		this.idMenuItem = idMenuItem;
+	}
 	
 	@Transient 
 	public List<GridsterItemVO> widgets;
+	
+	public String getCodigo() {
+		return codigo;
+	}
+	
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
 
 	public String getId() {
 		return id;
@@ -26,14 +46,6 @@ public class DashboardVO {
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public Long getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(Long codigo) {
-		this.codigo = codigo;
 	}
 
 	public List<GridsterItemVO> getWidgets() {
