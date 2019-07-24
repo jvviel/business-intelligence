@@ -15,9 +15,6 @@ public class MenuItemVO {
 	@Column(name = "label")
 	private String label;
 	
-	@Column(name = "item")
-	private String item;
-	
 	@Column(name = "icon")
 	private String icon;
 	
@@ -49,14 +46,6 @@ public class MenuItemVO {
 
 	public void setLabel(String label) {
 		this.label = label;
-	}
-
-	public String getItem() {
-		return item;
-	}
-
-	public void setItem(String item) {
-		this.item = item;
 	}
 
 	public String getIcon() {

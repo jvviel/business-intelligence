@@ -34,8 +34,9 @@ public class MenuItemService {
 			menu.setId(Util.codigo());
 		}
 		this.repository.save(menu);
+		/*menu.getDashboard().setCodigo(menu.getId());
 		menu.getDashboard().setIdMenuItem(menu.getId());
-		this.service.salvar(menu.getDashboard());
+		this.service.salvar(menu.getDashboard()); */
 	}
 	
 	public void deletar(String id) {

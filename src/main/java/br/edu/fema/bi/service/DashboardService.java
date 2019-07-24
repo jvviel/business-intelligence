@@ -25,7 +25,6 @@ public class DashboardService {
 	private IGridsItemRepository gridRepository;
 
 	public void salvar(DashboardVO dash) {
-
 		if (dash.getCodigo() == null) {
 			dash.setCodigo(Util.codigo());
 		}

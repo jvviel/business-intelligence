@@ -41,12 +41,12 @@ public class DashboardController {
 		return new ResponseEntity<>(dash, HttpStatus.OK);
 	}
 	
-	@GetMapping("/{id}")
+/*	@GetMapping("/{id}")
 	@ApiOperation(value = "Serviço para buscar um dashboard por id")
 	public ResponseEntity<?> buscarPorId(@PathVariable String id) {
 		DashboardVO dash = service.selecionarPorId(id);
 		return new ResponseEntity<>(dash, HttpStatus.OK);
-	}
+	} */
 	
 	@ApiOperation(value = "Serviço para atualizar um dashboard")
 	@PutMapping("/{id}")

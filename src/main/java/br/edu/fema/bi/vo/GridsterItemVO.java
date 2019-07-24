@@ -23,11 +23,11 @@ public class GridsterItemVO {
 	@Column(name = "cols")
 	private Long cols;
 	
-	@Column(name = "drag_enable")
-	private Boolean dragEnable;
+	@Column(name = "drag_enabled")
+	private Boolean dragEnabled;
 	
-	@Column(name = "resize_enable")
-	private Boolean resizeEnable;
+	@Column(name = "resize_enabled")
+	private Boolean resizeEnabled;
 	
 	private String dashboard;
 
@@ -71,20 +71,20 @@ public class GridsterItemVO {
 		this.cols = cols;
 	}
 
-	public Boolean getDragEnable() {
-		return dragEnable;
+	public Boolean getDragEnabled() {
+		return dragEnabled;
 	}
 
-	public void setDragEnable(Boolean dragEnable) {
-		this.dragEnable = dragEnable;
+	public void setDragEnabled(Boolean dragEnabled) {
+		this.dragEnabled = dragEnabled;
 	}
 
-	public Boolean getResizeEnable() {
-		return resizeEnable;
+	public Boolean getResizeEnabled() {
+		return resizeEnabled;
 	}
 
-	public void setResizeEnable(Boolean resizeEnable) {
-		this.resizeEnable = resizeEnable;
+	public void setResizeEnabled(Boolean resizeEnabled) {
+		this.resizeEnabled = resizeEnabled;
 	}
 
 	public String getDashboard() {
