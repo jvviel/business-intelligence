@@ -1,4 +1,4 @@
-package br.edu.fema.bi.vo;
+	package br.edu.fema.bi.vo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
